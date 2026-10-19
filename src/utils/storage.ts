@@ -1,64 +1,67 @@
-import type { ITask } from '../interfaces/task';
-import { INITIAL_TASKS } from './mockData';
+import type { ITodo } from '../interfaces/todo';
 
-const STORAGE_KEY = 'ai_task_master_tasks_v1';
-const THEME_KEY = 'ai_task_master_theme_v1';
+const STORAGE_KEY = 'tnc_todo_app_tasks';
 
-export const loadTasksFromStorage = (): ITask[] => {
+// Başlangıçta boş kalmaması için örnek veriler
+export const INITIAL_TODOS: ITodo[] = [
+  {
+    id: 'todo-1',
+    title: 'React ve modern JavaScript temellerini tekrar et',
+    category: 'Ders',
+    priority: 'Yüksek',
+    completed: true,
+    createdAt: new Date(Date.now() - 86400000 * 2).toLocaleDateString('tr-TR'),
+  },
+  {
+    id: 'todo-2',
+    title: 'Components, Pages ve Interfaces klasör mimarisini kur',
+    category: 'Ders',
+    priority: 'Yüksek',
+    completed: true,
+    createdAt: new Date(Date.now() - 86400000).toLocaleDateString('tr-TR'),
+  },
+  {
+    id: 'todo-3',
+    title: 'Projeyi GitHub reposuna push et ve Netlify üzerinde yayına al',
+    category: 'İş',
+    priority: 'Orta',
+    completed: false,
+    createdAt: new Date().toLocaleDateString('tr-TR'),
+  },
+  {
+    id: 'todo-4',
+    title: 'Ödev teslim formunu doldur ve linkleri hocaya ilet',
+    category: 'Genel',
+    priority: 'Düşük',
+    completed: false,
+    createdAt: new Date().toLocaleDateString('tr-TR'),
+  },
+];
+
+/**
+ * LocalStorage'dan görevleri çeker. Veri yoksa başlangıç verilerini döner.
+ */
+export const loadTodos = (): ITodo[] => {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_TASKS));
-      return INITIAL_TASKS;
+    const data = localStorage.getItem(STORAGE_KEY);
+    if (!data) {
+      saveTodos(INITIAL_TODOS);
+      return INITIAL_TODOS;
     }
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) && parsed.length > 0 ? parsed : INITIAL_TASKS;
+    return JSON.parse(data);
   } catch (err) {
-    console.error('LocalStorage load error:', err);
-    return INITIAL_TASKS;
+    console.error('LocalStorage okuma hatası:', err);
+    return INITIAL_TODOS;
   }
 };
 
-export const saveTasksToStorage = (tasks: ITask[]): void => {
+/**
+ * Görevleri LocalStorage'a kaydeder.
+ */
+export const saveTodos = (todos: ITodo[]): void => {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
   } catch (err) {
-    console.error('LocalStorage save error:', err);
-  }
-};
-
-export const exportTasksAsJSON = (tasks: ITask[]): void => {
-  const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(tasks, null, 2));
-  const downloadAnchor = document.createElement('a');
-  downloadAnchor.setAttribute('href', dataStr);
-  downloadAnchor.setAttribute('download', `ai_tasks_backup_${new Date().toISOString().slice(0, 10)}.json`);
-  document.body.appendChild(downloadAnchor);
-  downloadAnchor.click();
-  downloadAnchor.remove();
-};
-
-export const importTasksFromJSON = (jsonString: string): ITask[] => {
-  const parsed = JSON.parse(jsonString);
-  if (!Array.isArray(parsed)) {
-    throw new Error('Geçersiz dosya biçimi: Görev dizisi bulunamadı.');
-  }
-  return parsed;
-};
-
-export const getSavedTheme = (): 'dark' | 'light' => {
-  try {
-    const saved = localStorage.getItem(THEME_KEY);
-    if (saved === 'dark' || saved === 'light') return saved;
-    return 'dark';
-  } catch {
-    return 'dark';
-  }
-};
-
-export const saveThemeToStorage = (theme: 'dark' | 'light'): void => {
-  try {
-    localStorage.setItem(THEME_KEY, theme);
-  } catch (err) {
-    console.error('Theme save error:', err);
+    console.error('LocalStorage kayıt hatası:', err);
   }
 };

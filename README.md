@@ -1,79 +1,73 @@
-# 🚀 AI TaskMaster Studio — Web Geliştirme & Yapay Zeka Projesi
+# 📝 TodoApp — Modern Görev Yönetim Uygulaması
 
-TNC Group Web Geliştirme & Yapay Zeka Eğitim Programı proje yönergesi gereksinimlerine tam uyumlu olarak geliştirilmiş modern, modüler ve yapay zeka destekli görev ve proje yönetim stüdyosu.
+TNC Group Web Geliştirme Proje Yönergesi gereksinimlerine birebir uygun olarak geliştirilmiş; **ReactJS**, **TypeScript**, **Pure CSS** ve **LocalStorage** destekli modern, sade ve tam fonksiyonel bir Görev (Todo) yönetim uygulamasıdır.
 
-![AI TaskMaster Studio Preview](public/screenshots/dashboard_preview.jpg)
+![Proje Önizlemesi](public/screenshots/dashboard_preview.jpg)
 
 ---
 
-## 📋 Proje Yönergesi Gereksinimleri ve Uyumluluk
+## 📋 Proje Yönergesi ve Uyumluluk Tablosu
 
 | Yönerge Maddesi | Durum | Açıklama |
 |---|:---:|---|
-| **Modern JS Kütüphanesi** | ✅ Tamamlandı | **ReactJS 19** + **TypeScript** + **Vite** kullanıldı. |
-| **LocalStorage Desteği** | ✅ Tamamlandı | Tüm CRUD işlemleri tarayıcı yerel depolaması (`localStorage`) ile anlık senkronizedir. JSON dışa/içe aktarma mevcuttur. |
-| **Netlify Yayına Alma** | ✅ Tamamlandı | `netlify.toml` ve `public/_redirects` SPA ayarları yapıldı, yayına hazır. |
-| **Dosya Ağaç Yapısı** | ✅ Tamamlandı | `components`, `pages`, `interfaces` ve `utils` klasör yapısı kuruldu. |
-| **CSS Tercihi** | ✅ Tamamlandı | Sıfır harici CSS bağımlılığıyla **Pure CSS (Vanilla CSS)**, CSS Değişkenleri, Glassmorphism ve Google Fonts (`Outfit`, `Plus Jakarta Sans`) kullanıldı. |
-| **CRUD: Ekleme (Create)** | ✅ Tamamlandı | `TaskFormModal` ve `AIAssistantModal` ile yeni görev ve prompt planı ekleme. |
-| **CRUD: Listeleme (Read)** | ✅ Tamamlandı | Arama, kategori filtreleri (Yapay Zeka, Frontend, Backend, Tasarım), öncelik/durum filtreleme, sıralama ve istatistik kartları. |
-| **CRUD: Güncelleme (Update)** | ✅ Tamamlandı | Görev içeriğini düzenleme (başlık, kategori, öncelik, tarih, etiketler) ve tek tıkla tamamlandı/bekliyor durumunu değiştirme. |
-| **CRUD: Silme (Delete)** | ✅ Tamamlandı | `DeleteConfirmModal` ile onaylı kalıcı silme işlemi. |
-| **Ekran Görüntüsü** | ✅ Tamamlandı | `public/screenshots/dashboard_preview.jpg` eklendi. |
-| **GitHub Entegrasyonu** | ✅ Tamamlandı | Git reposu başlatıldı ve ilk commit hazırlandı. |
+| **Modern JS Kütüphanesi** | ✅ Tamamlandı | **ReactJS 19** + **TypeScript** + **Vite** mimarisi kullanıldı. |
+| **LocalStorage Desteği** | ✅ Tamamlandı | Eklenen, düzenlenen veya silinen tüm görevler tarayıcının yerel hafızasında (`localStorage`) anlık saklanır. Sayfa yenilense de kaybolmaz. |
+| **Netlify Yayına Alma** | ✅ Tamamlandı | `netlify.toml` ve `public/_redirects` SPA konfigürasyonu yapıldı, tek tıkla yayına hazır. |
+| **Dosya Ağaç Yapısı** | ✅ Tamamlandı | Yönergede tavsiye edilen `Components`, `Pages` ve `Interfaces` klasör yapısı kuruldu. |
+| **CSS Tercihi** | ✅ Tamamlandı | Harici kütüphane şişkinliği olmadan sıfırdan **Pure CSS (Vanilla CSS)** ve modern CSS Değişkenleri ile tasarlandı. |
+| **CRUD: Ekleme (Create)** | ✅ Tamamlandı | `TodoForm` bileşeni üzerinden başlık, kategori (Ders, İş, Kişisel, Genel) ve öncelik derecesiyle yeni görev eklenir. |
+| **CRUD: Listeleme (Read)** | ✅ Tamamlandı | `TodoFilter` ve `TodoItem` bileşenleri ile tüm görevler listelenir; duruma göre (Tümü, Devam Edenler, Tamamlananlar) filtrelenir ve canlı aranabilir. |
+| **CRUD: Güncelleme (Update)** | ✅ Tamamlandı | Görev durumu tek tıkla "Tamamlandı" olarak işaretlenebilir; "Düzenle" butonu ile görev başlığı, kategorisi ve önceliği güncellenebilir. |
+| **CRUD: Silme (Delete)** | ✅ Tamamlandı | İstenmeyen görevler "Sil" butonu ile kalıcı olarak kaldırılabilir. Ayrıca tamamlananlar topluca temizlenebilir. |
+| **Ekran Görüntüsü** | ✅ Tamamlandı | `public/screenshots/dashboard_preview.jpg` dosyası eklendi. |
+| **GitHub Entegrasyonu** | ✅ Tamamlandı | Git reposu hazırlandı ve commit'lendi. |
 
 ---
 
 ## 🛠️ Kullanılan Teknolojiler
 
-- **Kütüphane & Çatı:** React 19, TypeScript
-- **Derleme Aracı:** Vite 8.3
-- **Stil & Tasarım:** Modern Pure CSS3 (CSS Variables, Glassmorphism, Micro-animations)
+- **Kütüphane:** React 19 (TypeScript ile)
+- **Geliştirme & Derleme:** Vite 8
+- **Stil & Tasarım:** Modern Pure CSS3 (CSS Variables, Flexbox, Yumuşak Geçişler)
 - **İkon Seti:** Lucide React
-- **Efektler:** Canvas Confetti (Görev tamamlandığında kutlama parçacıkları)
-- **Depolama:** Browser LocalStorage API
+- **Veri Depolama:** Tarayıcı Yerel Belleği (`window.localStorage`)
 
 ---
 
-## 📁 Proje Klasör Mimarisi
+## 📁 Dosya ve Klasör Yapısı
 
 ```text
 ai-task-master/
 ├── public/
-│   ├── _redirects              # Netlify SPA yönlendirmesi
+│   ├── _redirects              # Netlify SPA yönlendirme kuralı
 │   └── screenshots/
 │       └── dashboard_preview.jpg  # Proje arayüz ekran görüntüsü
 ├── src/
-│   ├── components/             # Yeniden kullanılabilir UI bileşenleri
-│   │   ├── AIAssistantModal.tsx    # Yapay zeka prompt ve görev üreticisi
-│   │   ├── DeleteConfirmModal.tsx  # Silme onay modalı
-│   │   ├── FilterBar.tsx           # Arama, kategori çipleri ve sıralama
-│   │   ├── Navbar.tsx              # Üst menü, tema değiştirici, JSON yedekleme
-│   │   ├── StatsCards.tsx          # Anlık istatistik ve tamamlama oranı
-│   │   ├── TaskCard.tsx            # Tekil görev kartı (tamamlama, düzenleme, silme)
-│   │   └── TaskFormModal.tsx       # Görev ekleme ve güncelleme modalı
-│   ├── interfaces/             # TypeScript tip ve arayüz tanımları
-│   │   └── task.ts                 # ITask, ITaskFilter, ITaskStats tanımları
-│   ├── pages/                  # Sayfa görünümleri
-│   │   └── DashboardPage.tsx       # Ana kontrol paneli ve CRUD yönetimi
+│   ├── components/             # Yeniden kullanılabilir React bileşenleri
+│   │   ├── Navbar.tsx          # Üst başlık, tamamlama oranı ve sıfırlama butonu
+│   │   ├── TodoFilter.tsx      # Arama çubuğu ve durum filtre sekmeleri
+│   │   ├── TodoForm.tsx        # Yeni görev ekleme formu (Create)
+│   │   └── TodoItem.tsx        # Tekil görev kartı (Listeleme, Güncelleme, Silme)
+│   ├── interfaces/             # TypeScript tip tanımları
+│   │   └── todo.ts             # ITodo, TodoCategory, TodoPriority, FilterStatus
+│   ├── pages/                  # Sayfa bileşenleri
+│   │   └── TodoPage.tsx        # Ana sayfa ve CRUD durum (state) yönetimi
 │   ├── utils/                  # Yardımcı fonksiyonlar
-│   │   ├── aiGenerator.ts          # Prompt şablonları ve zeki görev motoru
-│   │   ├── mockData.ts             # Başlangıç örnek görevleri
-│   │   └── storage.ts              # LocalStorage ve JSON dışa/içe aktarımı
-│   ├── App.css                 # Bileşen stilleri ve grid düzeni
-│   ├── App.tsx                 # Ana uygulama kökü
-│   ├── index.css               # Temel tasarım sistemi ve renk değişkenleri
-│   └── main.tsx                # React DOM mount noktası
-├── netlify.toml                # Netlify derleme ve dağıtım konfigürasyonu
+│   │   └── storage.ts          # LocalStorage okuma/yazma ve başlangıç verileri
+│   ├── App.css                 # Temiz ve modern Pure CSS stilleri
+│   ├── App.tsx                 # Kök React bileşeni
+│   ├── index.css               # Global tipografi ve renk değişkenleri
+│   └── main.tsx                # React DOM render noktası
+├── netlify.toml                # Netlify yayına alma konfigürasyonu
 ├── package.json
 └── tsconfig.json
 ```
 
 ---
 
-## 💻 Yerel Kurulum ve Çalıştırma
+## 🚀 Projeyi Bilgisayarınızda Çalıştırma
 
-Projeyi bilgisayarınızda çalıştırmak için aşağıdaki adımları takip edin:
+Projeyi yerel ortamda çalıştırmak için:
 
 1. **Bağımlılıkları Yükleyin:**
    ```bash
@@ -84,7 +78,7 @@ Projeyi bilgisayarınızda çalıştırmak için aşağıdaki adımları takip e
    ```bash
    npm run dev
    ```
-   Tarayıcınızda [http://localhost:5173](http://localhost:5173) adresine gidin.
+   Tarayıcınızda açılan `http://localhost:5173` adresine giderek uygulamayı test edebilirsiniz.
 
 3. **Üretim (Production) Derlemesi Alın:**
    ```bash
@@ -95,33 +89,26 @@ Projeyi bilgisayarınızda çalıştırmak için aşağıdaki adımları takip e
 
 ## 🐙 GitHub'a Yükleme Adımları
 
-1. GitHub hesabınızda yeni bir **Public** repo oluşturun (Örn: `ai-task-master`).
-2. Terminalde proje klasöründeyken şu komutları çalıştırın:
+1. [GitHub](https://github.com) hesabınızda oturum açın ve **New repository** butonuna tıklayın.
+2. Repo adını belirleyin (Örn: `tnc-todo-app`) ve **Public** olarak oluşturun (README ekleme kutucuğunu boş bırakın).
+3. VS Code terminalinde (veya proje klasörünüzde) şu komutları sırayla çalıştırın:
    ```bash
+   git add .
+   git commit -m "feat: tamamlanmis todo app projesi"
    git branch -M main
-   git remote add origin https://github.com/KULLANICI_ADINIZ/ai-task-master.git
+   git remote add origin https://github.com/KULLANICI_ADINIZ/tnc-todo-app.git
    git push -u origin main
    ```
 
 ---
 
-## 🌐 Netlify ile Yayına Alma (2 Kolay Yol)
+## 🌐 Netlify Üzerinden Yayına Alma Adımları
 
-### Yöntem 1: GitHub ile Otomatik Dağıtım (Önerilen)
-1. [Netlify](https://app.netlify.com)'ye giriş yapın.
-2. **"Add new site"** > **"Import an existing project"** seçeneğini tıklayın.
-3. GitHub reponuzu seçin.
+1. [Netlify](https://www.netlify.com) hesabınıza giriş yapın.
+2. **Add new site** > **Import an existing project** seçeneğine tıklayın.
+3. **GitHub** sağlayıcısını seçin ve yukarıda yüklediğiniz depoyu seçin.
 4. Ayarlar otomatik algılanacaktır:
-   - **Build Command:** `npm run build`
+   - **Build command:** `npm run build`
    - **Publish directory:** `dist`
-5. **"Deploy site"** butonuna basın. Birkaç saniye içinde siteniz canlıda!
-
-### Yöntem 2: Sürükle & Bırak (Manual Deploy)
-1. Projede `npm run build` komutunu çalıştırın.
-2. Oluşan `dist` klasörünü Netlify panelindeki **"Sites" > "Drag & drop your site output folder here"** alanına sürükleyin.
-
----
-
-## 🎓 Eğitmen & Kurum Bilgisi
-- **Eğitim:** TNC Group — Web Geliştirme; Yapay Zeka Eğitim Programı
-- **Eğitmen:** Onur Yalçın (`softwareonuryalcin@gmail.com`)
+5. **Deploy site** butonuna tıklayın. Birkaç saniye içinde siteniz canlıya alınacak ve size `.netlify.app` uzantılı bir bağlantı verecektir.
+6. Bu linki ödev teslim formunuza ekleyebilirsiniz.

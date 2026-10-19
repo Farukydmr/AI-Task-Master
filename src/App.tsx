@@ -1,8 +1,8 @@
 import './App.css';
-import { DashboardPage } from './pages/DashboardPage';
+import { TodoPage } from './pages/TodoPage';
 
 function App() {
-  return <DashboardPage />;
+  return <TodoPage />;
 }
 
 export default App;
