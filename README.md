@@ -89,16 +89,13 @@ Projeyi yerel ortamda çalıştırmak için:
 
 ## 🐙 GitHub'a Yükleme Adımları
 
-1. [GitHub](https://github.com) hesabınızda oturum açın ve **New repository** butonuna tıklayın.
-2. Repo adını belirleyin (Örn: `tnc-todo-app`) ve **Public** olarak oluşturun (README ekleme kutucuğunu boş bırakın).
-3. VS Code terminalinde (veya proje klasörünüzde) şu komutları sırayla çalıştırın:
+1. [GitHub](https://github.com/new) üzerinde oturum açın ve **ai-task-master** adında **Public** bir repository oluşturun (README veya .gitignore ekleme kutucuklarını işaretlemeyin).
+2. Terminalinizde hazır olan projeyi doğrudan GitHub'a göndermek için tek komut yeterlidir:
    ```bash
-   git add .
-   git commit -m "feat: tamamlanmis todo app projesi"
-   git branch -M main
-   git remote add origin https://github.com/KULLANICI_ADINIZ/tnc-todo-app.git
    git push -u origin main
    ```
+   *(Remote origin zaten `https://github.com/Farukydmr/ai-task-master.git` olarak tanımlanmıştır).*
+
 
 ---
 
