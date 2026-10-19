@@ -23,7 +23,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
           <div>
             <h1 className="logo-title">Görev Listesi (Todo App)</h1>
-            <p className="logo-subtitle">TNC Group Web Geliştirme Projesi</p>
           </div>
         </div>
 

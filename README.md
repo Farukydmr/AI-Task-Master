@@ -1,6 +1,6 @@
 # 📝 TodoApp — Modern Görev Yönetim Uygulaması
 
-TNC Group Web Geliştirme Proje Yönergesi gereksinimlerine birebir uygun olarak geliştirilmiş; **ReactJS**, **TypeScript**, **Pure CSS** ve **LocalStorage** destekli modern, sade ve tam fonksiyonel bir Görev (Todo) yönetim uygulamasıdır.
+Web Geliştirme Proje Yönergesi gereksinimlerine birebir uygun olarak geliştirilmiş; **ReactJS**, **TypeScript**, **Pure CSS** ve **LocalStorage** destekli modern, sade ve tam fonksiyonel bir Görev (Todo) yönetim uygulamasıdır.
 
 ![Proje Önizlemesi](public/screenshots/dashboard_preview.jpg)
 

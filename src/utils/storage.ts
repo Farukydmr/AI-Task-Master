@@ -1,6 +1,6 @@
 import type { ITodo } from '../interfaces/todo';
 
-const STORAGE_KEY = 'tnc_todo_app_tasks';
+const STORAGE_KEY = 'todo_app_tasks';
 
 // Başlangıçta boş kalmaması için örnek veriler
 export const INITIAL_TODOS: ITodo[] = [
